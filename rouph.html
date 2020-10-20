@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Mdr</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      #mdr {
+        width: fit-content;
+        font-size: 50px;
+        background-image: linear-gradient(
+          to left,
+          violet,
+          indigo,
+          blue,
+          green,
+          yellow,
+          orange,
+          red
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      #prout {
+        position: fixed;
+        background-color: white;
+        color: black;
+        z-index: 999999;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span id="mdr">MDR</span>
+    </div>
+    <div>
+      <p id="lol"></p>
+    </div>
+    <script>
+      var step = 5;
+
+      const color = [
+        "violet",
+        "indigo",
+        "blue",
+        "green",
+        "yellow",
+        "orange",
+        "red",
+      ];
+
+      const mdrEl = document.getElementById("mdr");
+
+      const moveLol = async () => {
+        while (true) {
+          for (var i = 0; i <= document.body.clientWidth; i += step) {
+            mdrEl.style.marginLeft = i;
+            await new Promise((r) => setTimeout(r, 1));
+          }
+        }
+      };
+
+      const lolEl = document.getElementById("lol");
+
+      const peterChier = async () => {
+        let pet = true;
+        let colorIdx = 0;
+        while (true) {
+          let spanPetChi = document.createElement("span");
+
+          let textnode = document.createTextNode(pet ? "Péter " : "Chier ");
+
+          pet = !pet;
+
+          spanPetChi.appendChild(textnode);
+
+          spanPetChi.style.color = color[colorIdx];
+
+          colorIdx = colorIdx !== color.length - 1 ? colorIdx + 1 : 0;
+
+          lolEl.appendChild(spanPetChi);
+
+          await new Promise((r) => setTimeout(r, 100));
+        }
+      };
+
+      const bodyEl = document.body;
+
+      const clientWidth = document.body.clientWidth;
+      const clientHeight = document.body.clientHeight;
+
+      const prout = async () => {
+        while (true) {
+          let spanProut = document.createElement("div");
+          let textnode = document.createTextNode("PROUT");
+          spanProut.appendChild(textnode);
+          spanProut.id = "prout";
+
+          const randomWidth = Math.floor(Math.random() * (clientWidth - 1));
+          const randomHeight = Math.floor(Math.random() * (clientHeight - 1));
+
+          spanProut.style.top = randomHeight;
+          spanProut.style.left = randomWidth;
+
+          bodyEl.appendChild(spanProut);
+
+          await new Promise((r) => setTimeout(r, 500));
+
+          spanProut.remove();
+        }
+      };
+
+      moveLol();
+      peterChier();
+      prout();
+    </script>
+  </body>
+</html>
