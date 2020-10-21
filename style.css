@@ -1,10 +1,135 @@
-* {font-family: 'Roboto', sans-serif;} 
-h1 {color : red;}
-#image-uzi {
-	width: 180px;
-	height: auto;
+* {
+	font-family: 'Roboto', sans-serif;
+} 
+
+h1, {
+	color : red;
+	font-family: 'Comic Sans MS', sans-serif;
 }
+
+#image-uzi-container img {
+	height: auto;
+	width: 28vw;
+}
+
+#image-uzi-container {
+	margin: auto;
+	width: 300px;
+	text-align: center;
+}
+
 #goofy {
 	width: 100px;
 	height: auto;
+}
+h2 {
+	color: orange;
+	font-family: 'Comic Sans MS', sans-serif;
+	font-size: 17px
+}
+
+a {
+	color: turquoise;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: brown;
+	text-decoration: none;
+}
+
+body {
+	color: purple;
+	background-image: url(images/MJ.jpg);
+	background-size: cover;
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin: 0;
+	padding: 2vh 2vw;
+}
+
+.image-circle {
+	border-radius: 50%;
+}
+
+.container {
+	width: 900px;
+	margin: 30px auto;
+}
+
+
+
+.card {
+	background: black;
+	/*width: 100%;*/
+	margin: 20px;
+	box-shadow: 2px 3px 5px grey;
+	border-radius: 10px;
+	border: content;
+	padding: 5vh 2vw;
+	transition: color 0.3s ease;
+	border: 5px red;
+}
+
+.card:hover {
+	background: grey;
+}
+
+.card h1, h2 {
+	text-align: center;
+}
+
+.card p {
+	text-align: justify
+}
+
+#bisous{
+	float: right; 
+}
+
+#reseaux-sociaux li {
+	display: inline-block;
+}
+
+.joji-cursor, a, .card {
+	cursor: url("images/joji-mario.png"), auto;
+}
+
+.bouton-lien{
+	background-color: red;
+	box-shadow: 2px 3px 5px grey;
+	transition: color 0.3s ease;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 5px;
+	display: block;
+	text-align: center;
+	width: fit-content;
+}
+
+.bouton-lien:hover {
+	background: green;
+}
+
+#image-uzi-container .bouton-lien{
+	margin: 20px auto;
+}
+
+@media (max-width: 900px) {
+	.container {
+		width: 700px
+	}
+}
+
+@media (max-width: 720px) {
+	.container {
+		width: 500px
+	}
+}
+
+@media (max-width: 540px) {
+	.container {
+		width: 400px
+	}
 }
